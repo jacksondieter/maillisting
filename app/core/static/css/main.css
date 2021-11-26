@@ -1,0 +1,315 @@
+body {
+    font-family: Merriweather, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.logoimg {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.log {
+    position: relative;
+    top: 50px;
+    padding: 5px;
+    margin: auto;
+    width: 50%;
+}
+
+.navbar-brand {
+    padding: 5px;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+    font-size: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h3 {
+    margin: 0px;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: url(../img/header.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 150px 15px;
+    text-align: center;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header .header-content .header-content-inner hr {
+    margin: 30px auto;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, .7);
+}
+
+section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    margin-top: 0;
+}
+
+.service-box {
+    margin: 50px auto 0;
+    max-width: 400px;
+}
+
+@media(min-width:992px) {
+    .service-box {
+        margin: 20px auto 0;
+    }
+}
+
+.service-box p {
+    margin-bottom: 0;
+}
+
+form label {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+}
+
+form input,
+select,
+textarea {
+    width: 400px;
+    background-color: #fafafa;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+
+/* Message flashing */
+
+.flash {
+    background-color: #FBB0B0;
+    padding: 10px;
+    width: 400px;
+}
+
+form input#submit {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+form input#submit:focus,
+form input#submit.focus {
+    color: #fff;
+    background-color: #286090;
+    border-color: #122b40;
+}
+
+form input#submit:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+form input#submit:active,
+form input#submit.active,
+.open > .dropdown-toggleform input#submit {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+form input#submit:active:hover,
+form input#submit.active:hover,
+.open > .dropdown-toggleform input#submit:hover,
+form input#submit:active:focus,
+form input#submit.active:focus,
+.open > .dropdown-toggleform input#submit:focus,
+form input#submit:active.focus,
+form input#submit.active.focus,
+.open > .dropdown-toggleform input#submit.focus {
+    color: #fff;
+    background-color: #204d74;
+    border-color: #122b40;
+}
+
+form input#submit:active,
+form input#submit.active,
+.open > .dropdown-toggleform input#submit {
+    background-image: none;
+}
+
+form input#submit.disabled:hover,
+form input#submit[disabled]:hover,
+fieldset[disabled] form input#submit:hover,
+form input#submit.disabled:focus,
+form input#submit[disabled]:focus,
+fieldset[disabled] form input#submit:focus,
+form input#submit.disabled.focus,
+form input#submit[disabled].focus,
+fieldset[disabled] form input#submit.focus {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+form input#submit .badge {
+    color: #337ab7;
+    background-color: #fff;
+}
+
+form input#submit {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+form input#submit:focus,
+form input#submit:active:focus,
+form input#submit.active:focus,
+form input#submit.focus,
+form input#submit:active.focus,
+form input#submit.active.focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+form input#submit:hover,
+form input#submit:focus,
+form input#submit.focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+form input#submit:active,
+form input#submit.active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+form input#submit.disabled,
+form input#submit[disabled],
+fieldset[disabled] form input#submit {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+form input#submit.disabled,
+fieldset[disabled] form input#submit {
+    pointer-events: none;
+}
+
+.navbar-default {
+    background-color: #fff;
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.navbar-fixed-top {
+    border-color: rgba(34, 34, 34, .05);
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fff;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+
+.navbar-fixed-top .navbar-header .navbar-brand {
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    color: #3886AA;
+}
+
+.navbar-fixed-top .navbar-header .navbar-brand:hover,
+.navbar-fixed-top .navbar-header .navbar-brand:focus {
+    color: #eb3812;
+}
+
+.navbar-fixed-top .nav > li>a,
+.navbar-fixed-top .nav>li>a:focus {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
+
+.navbar-fixed-top .nav > li>a:hover,
+.navbar-fixed-top .nav>li>a:focus:hover {
+    color: #3886AA;
+}
+
+.navbar-fixed-top .nav > li.active>a,
+.navbar-fixed-top .nav>li.active>a:focus {
+    color: #3886AA!important;
+    background-color: transparent;
+}
+
+.navbar-fixed-top .nav > li.active>a:hover,
+.navbar-fixed-top .nav>li.active>a:focus:hover {
+    background-color: transparent;
+}

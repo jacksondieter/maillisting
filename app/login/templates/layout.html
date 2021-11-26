@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mail List{% endblock %}</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('core.static', filename='css/main.css') }}"> {% block head %}{% endblock %}
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    {% if 'email' in session %}
+    <nav class="navbar navbar-default " role="navigation">
+        {% else %}
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            {% endif %}
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    {% if 'email' in session %}
+                    <a class="navbar-brand" href="{{ url_for('login.profile') }}">
+                        <div class="logoimg"><img class="logoimg" src="{{ url_for('core.static', filename='img/logo.png') }}" alt="seabird" /></div>
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url_for('core.campaign') }}">Campaigns</a></li>
+                        <li><a href="{{ url_for('core.templates') }}">Templates</a></li>
+                        <li><a href="{{ url_for('core.lists') }}">Lists</a></li>
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-default">
+                        <li><a href="#">Help</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ session['email'] }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url_for('login.profile') }}"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                                <li><a href="{{ url_for('login.signout') }}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+                {% else %}
+                <a class="navbar-brand" href="{{ url_for('login.home') }}">
+                    <div class="logoimg"><img class="logoimg" src="{{ url_for('core.static', filename='img/logo.png') }}" alt="seabird" /></div>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="page-scroll" href="{{ url_for('login.home') }}#about">About</a></li>
+                    <li><a class="page-scroll" href="{{ url_for('login.home') }}#services">Service</a></li>
+                    <li><a class="page-scroll" href="{{ url_for('login.home') }}#contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right navbar-default">
+                    <li><a href="{{ url_for('login.signup') }}">Sign Up</a></li>
+                    <li><a href="{{ url_for('login.signin') }}">Sign In</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            {% endif %}
+            </div>
+        </nav>
+        {% block header %} {% endblock %} {% block body %} {%endblock%} {% block content %} {% endblock %}
+</body>
+
+</html>

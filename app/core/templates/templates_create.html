@@ -1,0 +1,120 @@
+{% extends 'dashboard.html' %}
+{% block title %}Templates - {{ super() }}{% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block header %}
+
+	{% endblock %}
+{% block body %}
+<form>
+  <fieldset class="form-group">
+    <label for="name">Name Campaign</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter name">
+    <small class="text-muted">We'll never share your email with anyone else.</small>
+  </fieldset>
+  <!-- <fieldset class="form-group">
+    <label for="subject">email</label>
+    <input type="text" class="form-control" id="subject" placeholder="Subject">
+  </fieldset> -->
+  <fieldset class="form-group">
+    <label for="exampleSelect1">Template</label>
+    <button type="button" class="btn btn-default pull-right">Create Template</button>
+    <select class="form-control" id="exampleSelect1">
+      <option data-toggle="modal" data-target="#myModal">1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="exampleSelect2">List</label>
+    <button type="button" class="btn btn-default pull-right">Create List</button>
+   <select class="form-control" id="exampleSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="exampleTextarea">Example textarea</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" class="form-control-file" id="exampleInputFile">
+    <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+  </fieldset>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+      Option one is this and that&mdash;be sure to include why it's great
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+      Option two can be something else and selecting it will deselect option one
+    </label>
+  </div>
+  <div class="radio disabled">
+    <label>
+      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+      Option three is disabled
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#myModal">Create</button>
+
+<!-- Trigger the modal with a button -->
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+       
+     <form action="{{ url_for('core.template_create') }}" method="post" name="simple" enctype="multipart/form-data">
+        <p>
+           {{ form.sender_name.label }} 
+                    {{ form.sender_name }} 
+                    {{ form.sender_email.label }} 
+                    {{ form.sender_email }} 
+                    {{ form.htmlfile.label }} 
+                    {{ form.htmlfile }}
+                    {{ form.txtfile.label }} 
+                    {{ form.txtfile }}     
+             {{form.list_templates.label}}
+             {{form.list_templates}}
+             {{form.list_lists.label}}
+             {{form.list_lists}}
+         </p>
+        <p><input type="submit" value="Submit"></p>
+     </form>
+     
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+{%endblock%}
